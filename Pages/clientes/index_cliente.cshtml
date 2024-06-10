@@ -1,0 +1,34 @@
+@page
+@model restaurante.Pages.clientes.index_cliente
+@{
+    ViewData["Title"] = "index_cliente";
+}
+
+<h2 class="text-center mb-3">  lista de clientes </h2>
+<a class="btn btn-primary mb-3" href="clientes/criar">criar novo cliente</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>cpf</th>
+            <th>nome</th>
+            <th>email</th>
+            <th>tef</th>
+            <th>senha</th>
+        </tr>
+        <tbody>
+            @foreach (var cliente in Model.clienteListas){
+                <tr>
+                    <td>@cliente.cpf</td>
+                    <td>@cliente.nome</td>
+                    <td>@cliente.email</td>
+                    <td>@cliente.tef</td>
+                    <td>@cliente.senha</td>
+                    <td style="white-space:nowrap">
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </thead>
+</table>
